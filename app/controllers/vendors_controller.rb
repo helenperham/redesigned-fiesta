@@ -5,14 +5,14 @@ class VendorsController < ApplicationController
   def index
     @vendors = Vendor.all
 
-    render json: @vendors
+    render json: @vendors.as_json(only: [:id, :name])
   end
 
   # GET /vendors/1
   def show
 # feel like I want to add another param here- something about sweets for this particular vendor?
 # vendor = Vendor.find_by!((:id params[:id]), (sweets: params[:sweets]))    
-# render json: vendor
+# render json: vendor 
     render json: @vendor
   end
 

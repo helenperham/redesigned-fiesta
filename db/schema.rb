@@ -19,21 +19,15 @@ ActiveRecord::Schema.define(version: 2023_01_10_152550) do
   end
 
   create_table "vendor_sweets", force: :cascade do |t|
-    t.integer "vendor_id", null: false
-    t.integer "sweet_id", null: false
+    t.integer "vendor_id"
+    t.integer "sweet_id"
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["sweet_id"], name: "index_vendor_sweets_on_sweet_id"
-    t.index ["vendor_id"], name: "index_vendor_sweets_on_vendor_id"
   end
 
   create_table "vendors", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "vendor_sweets", "sweets"
-  add_foreign_key "vendor_sweets", "vendors"
 end

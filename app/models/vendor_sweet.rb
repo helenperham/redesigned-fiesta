@@ -1,6 +1,6 @@
 class VendorSweet < ApplicationRecord
-  has_one :vendor
-  has_one :sweet
+  belongs_to :vendor
+  belongs_to :sweet
 
   # haven't used a (joined table??) like this before in any of the labs...so confusing
   

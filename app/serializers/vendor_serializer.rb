@@ -7,8 +7,7 @@ class VendorSerializer < ActiveModel::Serializer
   # has_many :sweets, through: :vendorsweets
 
 # then tried adding these, added :vendor_sweets to attributes and got errors
-  # has_many :vendor_sweets
-  # has_many :sweets, through: :vendor_sweets
+  has_many :vendor_sweets
 
 
 end
